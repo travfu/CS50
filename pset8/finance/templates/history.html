@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block header %}<link href="/static/history.css" rel="stylesheet">{% endblock %}
+
+{% block title %}History{% endblock %}
+
+{% block main %}
+
+    <!-- bootstrap table -->
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Executed</th>
+                <th scope="col">Order Type</th>
+                <th scope="col">Stock</th>
+                <th scope="col" class="text-right">Amount</th>
+                <th scope="col" class="text-right">Volume</th>
+                <th scope="col" class="text-right">Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- Use jinja to render table from SQL table (portfolio) -->
+        {% for row in transactions %}
+            <tr>
+                <td>{{ row['datetime'] }}</td>
+
+                {% if row['orderType'] == 0 %}
+                    <td>Sell</td>
+                {% elif row['orderType'] == 1 %}
+                    <td>Buy</td>
+                {% elif row['orderType'] == 2 %}
+                    <td>Deposit</td>
+                {% endif %}
+
+                <td>{{ row['symbol'] }}</td>
+
+                <td>{{ '$%0.2f'|format(row["stockPrice"]|float) }}</td>
+
+                <td>{{ row['shares'] }}</td>
+
+                {% if row['orderType'] == 2 %}
+                    <td>{{ '$%.2f'|format(row['stockPrice']|float) }}</td>
+                {% else %}
+                    <td>{{ '$%.2f'|format(row['stockPrice']|float * row['shares']|float) }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

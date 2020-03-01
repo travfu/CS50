@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mario</title>
+
+    <!-- Bootstrap: Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap: CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- my CSS & JS-->
+    <link rel="stylesheet" href="styles.css">
+    <script src="mario.js"></script>
+</head>
+
+<body>
+    <!-- grey horizontal nav bar at top -->
+    <div class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+
+            <!-- navbar toggler when screen shrinks -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#toggler_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="toggler_target">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="..\index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="mario.html">Mario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../cash/cash.html">Cash</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../vigenere/vigenere.html">Vigenère</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- main container to wrap content -->
+    <div class="container">
+        <!-- header -->
+        <div class="container text-center">
+            <h1>CS50 Pset1: Mario</h1>
+        </div>
+        <hr>
+
+        <!-- form -->
+        <div class="container text-center">
+            <form onsubmit="return false">   
+                <label for="inputHeight">Enter a pyramid height number between 0-23:</label> <br>
+                <input type="text" id="inputHeight" placeholder="7" maxlength="2" autofocus> <br><br>
+                <input type="submit" class="btn btn-primary" onclick="validate()"><br>
+                <p id="error"></p>
+            </form> 
+        </div>      
+    </div>
+
+    <!-- mario table placeholder -->
+    <div class="wrapper">
+        <div id="marioBG">
+            <div id="mario"></div>
+        </div>
+
+        <div id="platform"></div>
+    </div>
+
+    <!-- Bootstrap: Optional Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

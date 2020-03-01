@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block main %}
+
+    <!-- bootstrap table -->
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Stock</th>
+                <th scope="col">Shares</th>
+                <th scope="col" class="text-right">Price</th>
+                <th scope="col" class="text-right">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- Use jinja to render table from SQL table (portfolio) -->
+        {% for row in portfolio %}
+            <tr>
+
+
+
+                <td>{{ row["symbol"] }}</td>
+                <td>{{ row["shares"] }}</td>
+                <td class="text-right">{{ '$%0.2f'|format(row["price"]|float) }}</td>
+                <td class="text-right">{{ '$%0.2f'|format(row["total"]|float) }}</td>
+
+            </tr>
+        {% endfor %}
+
+        <!-- display cash amount -->
+            <tr>
+                <td>Cash</td>
+                <td colspan="2"></td>
+                <td class="text-right">{{ cash }}</td>
+            </tr>
+        <!-- display total portfolio value -->
+            <tr>
+                <td colspan="3" class="text-right">Portfolio value:</td>
+                <td colspan="4" class="text-right">{{ portfolioValue }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

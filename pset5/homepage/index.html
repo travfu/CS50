@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Homepage</title>
+
+    <!-- Bootstrap: Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap: CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- my CSS -->
+    <link rel="stylsheet" href="style.css">
+</head>
+<body>
+    <!-- grey horizontal nav bar at top -->
+    <div class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+
+            <!-- navbar toggler when screen shrinks -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#toggler_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="toggler_target">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mario/mario.html">Mario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cash/cash.html">Cash</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vigenere/vigenere.html">Vigenère</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+            
+        <div class="jumbotron">
+            <h1>Hello, world!</h1>
+            <p>This is my homepage for CS50 Pset5</p>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-xs-8">
+                <h2>Mario</h2>
+                <p>Toward the beginning of World 1-1 in Nintendo’s Super Mario Brothers, Mario must hop over adjacent pyramids of blocks.</p>
+                <img src="mario/pyramids.png" alt="mario pyramid">
+                <p>Let’s recreate those pyramids in Javascript.</p>
+                <a class="btn btn-primary" href="mario/mario.html" role="button">Create a Mario pyramid</a>
+            </div>
+            <div class="col-sm-4 col-xs-8">
+                <h2>Cash</h2>
+                <p>A greedy algorithm chooses the optimal solution at the time it is executed, with no regard how that choice affects future choices. A use case for the greedy algorithm is in returning change in a money exchange by determining the optimal amount (i.e. least amount) of coins to return.</p>
+                <a class="btn btn-primary" href="cash/cash.html" role="button">Cash calculator</a>
+            </div>
+            <div class="col-sm-4 col-xs-8">
+                <h2>Vigenère</h2>
+                <p>The <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère cipher</a> is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers, based on the letters of a keyword</p>
+                <a class="btn btn-primary" href="vigenere/vigenere.html" role="button">Encrypt your messages</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap: Optional Javascript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

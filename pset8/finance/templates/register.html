@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block header %}<link href="/static/register.css" rel="stylesheet">{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block main %}
+    <form id="registerForm" action="/register" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="username">
+            <p id="check"></p>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="confirmation" placeholder="re-enter password">
+        </div>
+        <p id="errorMsg"></p>
+        <button id="btn" class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById("btn").addEventListener("click", function(event){
+            let req = new XMLHttpRequest();
+            let message = document.getElementById("check");
+            let errorMessage = document.getElementById("errorMsg");
+            let queryString = "?username=" + document.getElementsByName("username")[0].value;
+
+            event.preventDefault();
+            req.onreadystatechange = function()
+            {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        let usernameAvail = JSON.parse(this.responseText);
+                        if (usernameAvail == true) {
+                            document.getElementById("registerForm").submit();
+                        } else {
+                            message.innerHTML="Username taken";
+                        }
+                    } else {
+                        errorMessage.innerHTML="Sorry, there has been a submission error";
+                    }
+                }
+            };
+
+            req.open("GET", "/check" + queryString, true);
+            req.send();
+        });
+    </script>
+{% endblock %}

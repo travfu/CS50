@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Sheet{% endblock %}
+
+{% block main %}
+
+<!-- bootstrap table -->
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Preference</th>
+            <th scope="col">Favourite Avenger</th>
+        </tr>
+    </thead>
+    <tbody>
+    <!-- Use jinja to render table -->
+    {% for line in dataset %}
+        <tr>
+        {% for value in line %}
+            <td>{{ value }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

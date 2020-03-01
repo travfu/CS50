@@ -1,0 +1,40 @@
+h1 {
+    font-size: 40pt;
+    color: rgb(51,51,51);
+}
+
+label, #error  { font-size: 18pt; }
+
+#inputKey { font-size: 11pt; }
+
+#form1 {
+    margin-bottom: 10px;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+
+#form2 {
+    display: inline-block;
+}
+
+#form3 {
+    display: inline-block;
+    float: right;
+}
+
+#error {
+    margin-top: 10px;
+    color: red;
+    text-align: center;
+    font-size: 11pt;
+}
+
+textarea, #vigenere {
+    border: solid grey 1px;
+    border-radius: 5px;
+    height: 200px;
+    font-size: 11pt;
+    overflow: auto;
+    overflow-wrap: break-word;
+    /*background: rgba(0,0,0,.1)*/
+}

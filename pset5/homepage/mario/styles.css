@@ -1,0 +1,79 @@
+/* text */
+h1 {
+    font-size: 40pt;
+    color: rgb(51,51,51);
+}
+
+label { font-size: 18pt; }
+
+#inputHeight { font-size: 11pt; }
+
+#error{ height: 11px; color: red; }
+
+/* input form */
+#inputHeight {
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#inputHeight:focus {
+    background: rgba(0,0,0,.1);
+    border-radius: 5px;
+    outline: none;
+}
+
+/* mario images */
+#marioBG {
+    background-image: url("marioBG.jpg");
+    height: 350px;
+    width: 800px;
+    background-size: 100%;
+}
+
+#platform {
+    background-image: url("marioBG1.jpg");
+    height: 25px;
+    width: 800px;
+    background-size: cover;    
+}
+
+/* mario area positioning */
+.wrapper {
+    height: 800px;
+    width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+/* pyramid table */
+table { 
+    border-collapse: collapse;  
+    position: absolute;
+    bottom: 0;
+    margin-left: 170px;
+}
+
+td { 
+    height: 13px; 
+    width: 13px; 
+    padding: 0px; 
+    margin: 0px; 
+}
+
+img {
+    height: 13px;
+    width: 13px;
+    display: block;
+}
+
+/* positioning pyramid table over mario image */
+#mario {
+
+    height: 100%;
+    width: 100%;
+    margin-top: 5%;
+    bottom: 0;
+    position: relative;
+}
